@@ -20,8 +20,9 @@ Also what I'd like to add : validation and tests.
 <h2> How to launch </h2>
 <h3> Prerequisites </h3>
     1. NPM
-    2. Webpack
-    3. Postgres rdbms
+    2. Webpack (you can install it by the command "npm i webpack -g") 
+    3. Webpack dev server (you can install it by the command "npm i webpack-dev-server -g") 
+    4. Postgres rdbms
     
  <h3> Launch project </h3>    
 1. Clone the Repo 
