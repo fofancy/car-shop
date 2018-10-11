@@ -28,6 +28,9 @@ public class InventoryCarsTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    /**
+     * Tests whethher the cars purchased and sold right
+     * */
     @Test
     public void getAllCars() {
         // Initial size is 6

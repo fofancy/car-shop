@@ -24,6 +24,9 @@ public class CarControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    /**
+     * Simple test. Gets all cars
+     * */
     @Test
     public void getAllCars() {
         ResponseEntity<Iterable> response = this.restTemplate.getForEntity(
