@@ -25,7 +25,7 @@ Also what I'd like to add : validation and tests.
     
  <h3> Launch project </h3>    
 1. Clone the Repo 
-    git clone https://github.com/fofancy/test-task-ossystem.git
+    git clone https://github.com/fofancy/car-shop.git
 
 2. Create database as follows:
 	createdb -h localhost -p 5432 -U postgres carshop
