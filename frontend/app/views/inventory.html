@@ -1,0 +1,38 @@
+<div class="container grid" ng-controller="InventoryController as inventoryController">
+    <h2>All cars to be purchased by shop</h2>
+    <input class ="form-check-input" type="checkbox" name="vehicle" value="Reserved" ng-model="inventoryController.filter.reserved"> Reserved<br>
+    <h3>Min value</h3>
+    <input class="form-control" type="text" ng-model="inventoryController.filter.minValue" placeholder="Filter by brand" aria-label="Filter by brand">
+    <h3>Max value</h3>
+    <input class="form-control" type="text" ng-model="inventoryController.filter.maxValue" placeholder="Filter by brand" aria-label="Filter by brand">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Color</th>
+                <th>Vin</th>
+                <th>Price</th>
+                <th>Reserved</th>
+                <th>Purchase date</th>
+                <th>Sell</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="car in inventoryController.getCarsInfomration()">
+                <td>{{ car.brand }}</td>
+                <td>{{ car.color }}</td>
+                <td>{{ car.vin }}</td>
+                <td>{{ car.price }}</td>
+                <td>{{ car.reserved }}</td>
+                <td>{{ car.purchaseDate }}</td>
+                <td>
+                    <p title="Sell">
+                        <button class="btn btn-default btn-xs" ng-click = "inventoryController.sellCar($index)">
+                            Sell
+                        </button>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> 

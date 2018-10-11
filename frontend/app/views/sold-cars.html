@@ -1,0 +1,25 @@
+<div class="container grid" ng-controller="SoldCarsController as soldCarsController">
+    <h2>All cars to be purchased by shop</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Color</th>
+                <th>Vin</th>
+                <th>Price</th>
+                <th>Reserved</th>
+                <th>Sale date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="car in soldCarsController.getCarsInfomration()">
+                <td>{{ car.brand }}</td>
+                <td>{{ car.color }}</td>
+                <td>{{ car.vin }}</td>
+                <td>{{ car.price }}</td>
+                <td>{{ car.reserved }}</td>
+                <td>{{ car.saleDate }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> 

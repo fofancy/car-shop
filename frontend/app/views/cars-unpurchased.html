@@ -1,0 +1,33 @@
+<div class="container grid" ng-controller="CarsController as carsController">
+    <h2>All cars to be purchased by shop</h2>
+    <h3>You can filter by brand name</h3>
+    <input class="form-control filter" type="text" ng-model="carsController.filter.brand" placeholder="Filter by brand" aria-label="Filter by brand">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Color</th>
+                <th>Vin</th>
+                <th>Price</th>
+                <th>Reserved</th>
+                <th>Buy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="car in carsController.getCarsInfomration()">
+                <td>{{ car.brand }}</td>
+                <td>{{ car.color }}</td>
+                <td>{{ car.vin }}</td>
+                <td>{{ car.price }}</td>
+                <td>{{ car.reserved }}</td>
+                <td>
+                    <p title="Buy">
+                        <button class="btn btn-default btn-xs" ng-click = "carsController.buyCar($index)">
+                            Buy
+                        </button>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> 
