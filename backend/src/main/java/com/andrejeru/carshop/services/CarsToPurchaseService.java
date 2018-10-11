@@ -18,6 +18,7 @@ public class CarsToPurchaseService {
     }
 
     public Iterable<CarToPurchase> getAllCarsToPurchaseByBrand(String brandBeginsWith) {
+
         return carsToPurchaseRepository.findByCarBrandLike(brandBeginsWith);
 
     }

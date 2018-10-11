@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * Rest controller for all cars for purchase. The base url is "/api/cars-to-purchase".
+ * Rest controllers for all cars for purchase. The base url is "/api/cars-to-purchase".
  * */
 @RestController
 @RequestMapping("/api/cars-to-purchase")

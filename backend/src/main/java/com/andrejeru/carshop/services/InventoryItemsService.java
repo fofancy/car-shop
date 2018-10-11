@@ -33,10 +33,9 @@ public class InventoryItemsService {
     /**
      * Get car data by its id from inventory list, constructs new object which represents sold car
      * with additional field "sale date" and puts it in sold items list
-     *
-     * @param inventoryItemId car's to sell id
+     *  @param inventoryItemId car's to sell id
      * */
-    public void sellCar(Long inventoryItemId) {
+    public SoldCar sellCar(Long inventoryItemId) {
         Optional<InventoryItem> inventoryItem = inventoryItemsRepository.findById(inventoryItemId);
 
         if(!inventoryItem.isPresent()) {
@@ -48,16 +47,15 @@ public class InventoryItemsService {
         soldCar.setSaleDate(new Date(Calendar.getInstance().getTime().getTime()));
 
         inventoryItemsRepository.deleteById(inventoryItemId);
-        soldCarsRepository.save(soldCar);
+        return soldCarsRepository.save(soldCar);
     }
 
     /**
      * Get car data by its id from unpurchased cars list, constructs new object which represents purchased car
      * with additional field "purchase date" and puts it in sold items list
-     *
-     * @param carToBuyId car's to buy id
+     *  @param carToBuyId car's to buy id
      * */
-    public void buyCar(Long carToBuyId) {
+    public InventoryItem buyCar(Long carToBuyId) {
         Optional<CarToPurchase> inventoryItem = carsToPurchaseRepository.findById(carToBuyId);
 
         if(!inventoryItem.isPresent()) {
@@ -69,7 +67,7 @@ public class InventoryItemsService {
         item.setPurchaseDate(new Date(Calendar.getInstance().getTime().getTime()));
 
         carsToPurchaseRepository.deleteById(carToBuyId);
-        inventoryItemsRepository.save(item);
+        return inventoryItemsRepository.save(item);
     }
 
 

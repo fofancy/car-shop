@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 /**
- * Rest controller for all cars which are purchased and in inventory.
+ * Rest controllers for all cars which are purchased and in inventory.
  * The base url is "/api/inventory-items".
  * */
 @RestController
@@ -29,12 +29,11 @@ public class InventoryItemsController {
 
     /**
      * Removes car by id from cars from purchase list and adds it to inventory list.
-     *
-     * @param car which car to buy
+     *  @param car which car to buy
      * */
     @RequestMapping( method = RequestMethod.POST)
-    public void buyCar(@RequestBody CarToPurchase car) {
-        inventoryItemsService.buyCar(car.getId());
+    public InventoryItem buyCar(@RequestBody CarToPurchase car) {
+        return inventoryItemsService.buyCar(car.getId());
     }
 
     /**

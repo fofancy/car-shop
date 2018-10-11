@@ -7,8 +7,6 @@ import com.andrejeru.carshop.services.SoldCarsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @RestController
 @RequestMapping("/api/sold-cars")
 public class SoldCarsController {
@@ -31,11 +29,10 @@ public class SoldCarsController {
 
     /**
      * Removes car by id from cars from inventory list and adds it to sold cars list.
-     *
-     * @param car which car to buy
+     *  @param car which car to buy
      * */
     @RequestMapping(method = RequestMethod.POST)
-    public void sellCar(@RequestBody InventoryItem car) {
-        inventoryItemsService.sellCar(car.getId());
+    public SoldCar sellCar(@RequestBody InventoryItem car) {
+        return inventoryItemsService.sellCar(car.getId());
     }
 }

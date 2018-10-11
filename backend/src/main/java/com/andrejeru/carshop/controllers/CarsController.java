@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * Rest controller for all cars manipulation. The base url is "/api/cars". Controller
+ * Rest controllers for all cars manipulation. The base url is "/api/cars". Controller
  * contains method which are mapped to GET and gets info about the cars.
  *
  * Cars have three possible state:
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 2) Is in the shop inventory
  * 3) Is sold
  *
- * This controller is for every car in the system.
+ * This controllers is for every car in the system.
  *
  * */
 @RestController()
