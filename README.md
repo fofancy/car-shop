@@ -45,3 +45,13 @@ You can use your own database, you just need to change configuration in applicat
 9. webpack-dev-server
 
 10. Open a browser and enter localhost:[webpack-dev-server.port]/
+
+## Docker
+Also you can launch it with docker. I put this possibility in another branch "docker".
+
+So: 
+git checkout docker
+sudo sh ./run.sh
+
+Open this url in browser 
+http://localhost:8081/
