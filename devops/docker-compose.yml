@@ -1,0 +1,39 @@
+version: '2'
+services:
+    front:
+      image: carshop-frontend:latest
+      ports: 
+          - 8081:8081
+      depends_on:
+          - web 
+      networks:
+          - project_network
+    web:
+      image: carshop-backend:latest
+      ports: 
+          - 8080:8080
+      depends_on:
+          - db
+      networks:
+          - project_network
+    db:
+        container_name: postgres-db
+        image: postgres:latest
+        volumes:
+            - sample_db:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_DB=carshop
+            - PGDATA=/var/lib/postgresql/data/pgdata
+        ports:
+            - 5432
+        networks:
+            - project_network
+
+volumes:
+    sample_db: {}
+
+networks:
+  project_network:
+    driver: bridge

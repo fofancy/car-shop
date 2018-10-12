@@ -46,7 +46,9 @@ export default function carsController($scope, CarsHttpService) {
     }
 
     self.getCarsInfomration = function () {
-        return self.currentCars.map(ctp => ctp.car)
+        return self.currentCars ? 
+        self.currentCars.map(ctp => ctp.car) :
+        {}
     }
 
     console.log(self.currentCars);
